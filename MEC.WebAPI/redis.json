@@ -1,0 +1,31 @@
+﻿{
+  //For Service Stack Redis
+  //"Redis": {
+  //  "WriteServerList": "192.168.2.108:6379",
+  //  "ReadServerList": "192.168.2.108:6378",
+  //  "MaxWritePoolSize": 5,
+  //  "MaxReadPoolSize": 5,
+  //  "AutoStart": true,
+  //  "LocalCacheTime": 36000,
+  //  "RecordeLog": false
+  //},
+
+  //For StackExchange Redis
+  "RedisConnection": {
+    "EndPoints": "192.168.2.108:6379,192.168.2.108:6378",
+    "Password": "guest",
+    "ClientName": "guest",
+    "KeepAlive": 180,
+    "DefaultDatabase": 0,
+    "ConnectRetry": 3,
+    "ConnectTimeout": 5000,
+    "allowAdmin": true
+  },
+  "CacheSettings": {
+    "HeartbeatDueTime": 5000,
+    "ExpireSettings": {
+      "HishopProductTypes": 86400000,
+      "AspnetMembers": 86400
+    }
+  }
+}

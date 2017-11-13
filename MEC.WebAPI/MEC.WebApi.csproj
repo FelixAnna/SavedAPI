@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="logfile\**" />
+    <Content Remove="logfile\**" />
+    <EmbeddedResource Remove="logfile\**" />
+    <None Remove="logfile\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MEC.Logic\MEC.Logic.csproj" />
+    <ProjectReference Include="..\MEC.Model\MEC.Model.csproj" />
+    <ProjectReference Include="..\YD.Foundation\YD.Foundation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="StaticFiles\Scripts\jquery-1.8.3.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Test\" />
+    <Folder Include="Views\ZFB\" />
+    <Folder Include="Views\ZFB\" />
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>

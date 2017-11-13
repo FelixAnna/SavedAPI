@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <script src="~/StaticFiles/Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "/api/Login/PostLogin",
+                data: { LoginName: "hizxp", PassWord: "123456" },
+                dataType: "json",
+                beforeSend: function () {
+                    //$("#btnSend").text("请求中...");
+                },
+                success: function (data, textStatus) {
+                    if (data.Status == 200) {
+                        //程序正常
+                        if (data.Success) {
+                            //登录成功
+                            var user = data.Data.UserInfo;
+                            var token = data.Data.Token;
+                        }
+                        else {
+                            //验证失败
+                            alert(data.Message);
+                        }
+                    } else if (data.Status == 300) {
+                        //登录失效
+                        alert(data.Message);
+                    }
+                    else if (data.Status == 500) {
+                        //自定义逻辑异常
+                        alert(data.Message);
+                    }
+                },
+                error: function (ex) {
+                    //程序异常
+                    $("#btnSend").text("服务器异常");
+                    console.log(ex);
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
